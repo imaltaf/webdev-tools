@@ -14,7 +14,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 
 sudo apt update
 
-sudo apt install brave-browser
+sudo apt install brave-browser -y
 
 echo -e "Installing all dependencies\n"
 cd
@@ -50,7 +50,7 @@ sudo apt install jq -y 2> /dev/null &> /dev/null
 # sudo apt-get install -y parallel
 
 echo -e "- Installing chromium"
-sudo snap install chromium 2> /dev/null &> /dev/null
+sudo snap install chromium -y 2> /dev/null &> /dev/null
 sleep 2s
 
 echo -e "- Installing sublime"
@@ -61,34 +61,38 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | 
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 sudo apt-get update
-sudo apt-get install sublime-text
+sudo apt-get install sublime-text -y
 
 echo -e "- Installing redis-server"
 
-sudo apt install redis-server
+sudo apt install redis-server -y
 
-sudo apt install nodejs npm
+sudo apt install nodejs npm -y
 
-sudo apt install apache2
+sudo apt install apache2 -y
 
-sudo apt install mysql-server
+sudo apt install mysql-server -y
 
-sudo apt install php libapache2-mod-php
+sudo apt install php libapache2-mod-php -y
 
 wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
-sudo dpkg -i vscode.deb
+sudo dpkg -i vscode.deb 
 
-sudo npm install -g sass
+sudo apt install npm -y
 
-sudo npm install -g gulp
+sudo npm install -g sass -y
 
-sudo npm install -g webpack
+sudo npm install -g gulp -y
 
-sudo npm install -g @babel/core @babel/cli
+sudo npm install -g webpack -y
 
-sudo apt install postgresql
+sudo npm install -g @babel/core @babel/cli -y
 
-sudo apt install mongodb
+sudo apt install postgresql -y
+
+sudo apt install mongodb -y
 
 wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i chrome.deb
+sudo dpkg -i chrome.deb 
+
+sudo apt-get install terminator -y
